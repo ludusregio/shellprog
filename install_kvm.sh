@@ -23,8 +23,15 @@ task_message "Update apt cache"
 apt update -y 2> /dev/null
 echo
 
+# Install kvm and dependencies
+task_message "Install kvm and dependencies"
+apt install -y qemu qemu-kvm libvirt-bin bridge-utils
+echo
 
-
+# Install virt-manager
+task_message "Install virt-manager"
+apt install -y virt-manager
+echo
 
 if [[ -n ${DEBUG} ]]; then
 	# Output the ending of this script

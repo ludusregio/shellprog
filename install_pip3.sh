@@ -23,8 +23,15 @@ task_message "Update apt cache"
 apt update -y 2> /dev/null
 echo
 
+# Install python3
+task_message "Install python3"
+apt install -y python3
+echo
 
-
+# Install pip3
+task_message "Install pip3"
+apt install -y python3-pip
+echo
 
 if [[ -n ${DEBUG} ]]; then
 	# Output the ending of this script
